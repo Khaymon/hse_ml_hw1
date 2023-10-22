@@ -1,0 +1,9 @@
+{
+    "name": "BasicModel",
+    "base_model_config": {
+        "name": "GradientBoostingClassifier",
+        "params": {
+            "criterion": "squared_error"
+        }
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "tune_params": [
+        {
+            "path": ["base_model_config", "params", "learning_rate"],
+            "type": "float",
+            "values": [0.05, 1.0]
+        },
+        {
+            "path": ["base_model_config", "params", "max_iter"],
+            "type": "int",
+            "values": [100, 1000]
+        },
+        {
+            "path": ["base_model_config", "params", "l2_regularization"],
+            "type": "float",
+            "values": [0.0, 5.0]
+        },
+        {
+            "path": ["base_model_config", "params", "interaction_cst"],
+            "type": "categorical",
+            "values": ["pairwise", "no_interactions"]
+        },
+        {
+            "path": ["base_model_config", "params", "max_bins"],
+            "type": "int",
+            "values": [50, 255]
+        },
+        {
+            "path": ["base_model_config", "params", "max_depth"],
+            "type": "int",
+            "values": [1, 8]
+        },
+        {
+            "path": ["base_model_config", "params", "scoring"],
+            "type": "categorical",
+            "values": ["f1_macro", "loss"]
+        }
+    ]
+}

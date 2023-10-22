@@ -1,0 +1,12 @@
+{
+    "name": "BasicModel",
+    "base_model_config": {
+        "name": "HistGradientBoostingClassifier",
+        "params": {
+            "class_weight": "balanced",
+            "categorical_features": [
+                "Name", "SexuponOutcome", "AnimalType", "AgeuponOutcome", "Breed", "Color"
+            ]
+        }
+    }
+}

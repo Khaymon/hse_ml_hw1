@@ -1,0 +1,1 @@
+from .model import base_model_from_config  # noqa

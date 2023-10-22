@@ -1,0 +1,43 @@
+{
+    "preprocessors": [
+        {
+            "name": "DropPreprocessor",
+            "params": {
+                "drop_columns": ["Name"]
+            }
+        },
+        {
+            "name": "AgePreprocessor"
+        },
+        {
+            "name": "BreedVectorizerPreprocessor"
+        },
+        {
+            "name": "ColorVectorizerPreprocessor"
+        },
+        {
+            "name": "SexPreprocessor"
+        },
+        {
+            "name": "TypePreprocessor"
+        },
+        {
+            "name": "DateTimePreprocessor"
+        },
+        {
+            "name": "StandardScalerPreprocessor",
+            "params": {
+                "without_columns": [
+                    "Name",
+                    "SexuponOutcome",
+                    "AnimalType",
+                    "AgeuponOutcome",
+                    "Breed",
+                    "Color",
+                    "DateTime",
+                    "ID"
+                ]
+            }
+        }
+    ]
+}

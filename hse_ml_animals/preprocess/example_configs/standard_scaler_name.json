@@ -1,0 +1,47 @@
+{
+    "preprocessors": [
+        {
+            "name": "NamePreprocessor"
+        },
+        {
+            "name": "AgePreprocessor"
+        },
+        {
+            "name": "BreedVectorizerPreprocessor",
+            "params": {
+                "min_df": 0.05
+            }
+        },
+        {
+            "name": "ColorVectorizerPreprocessor",
+            "params": {
+                "min_df": 0.05
+            }
+        },
+        {
+            "name": "SexPreprocessor"
+        },
+        {
+            "name": "TypePreprocessor"
+        },
+        {
+            "name": "DateTimePreprocessor"
+        },
+        {
+            "name": "StandardScalerPreprocessor",
+            "params": {
+                "without_columns": [
+                    "Name",
+                    "IsName",
+                    "SexuponOutcome",
+                    "AnimalType",
+                    "AgeuponOutcome",
+                    "Breed",
+                    "Color",
+                    "DateTime",
+                    "ID"
+                ]
+            }
+        }
+    ]
+}

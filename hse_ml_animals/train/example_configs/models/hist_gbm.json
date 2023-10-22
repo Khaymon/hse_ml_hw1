@@ -1,0 +1,9 @@
+{
+    "name": "BasicModel",
+    "base_model_config": {
+        "name": "HistGradientBoostingClassifier",
+        "params": {
+            "class_weight": "balanced"
+        }
+    }
+}

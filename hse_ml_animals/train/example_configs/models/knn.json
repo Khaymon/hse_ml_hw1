@@ -1,0 +1,9 @@
+{
+    "name": "BasicModel",
+    "base_model_config": {
+        "name": "KNeighborsClassifier",
+        "params": {
+            "n_neighbors": 5
+        }
+    }
+}

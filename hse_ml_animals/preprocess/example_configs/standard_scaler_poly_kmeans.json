@@ -1,0 +1,93 @@
+{
+    "preprocessors": [
+        {
+            "name": "NamePreprocessor"
+        },
+        {
+            "name": "AgePreprocessor"
+        },
+        {
+            "name": "BreedVectorizerPreprocessor",
+            "params": {
+                "min_df": 0.05
+            }
+        },
+        {
+            "name": "ColorVectorizerPreprocessor",
+            "params": {
+                "min_df": 0.05
+            }
+        },
+        {
+            "name": "SexPreprocessor"
+        },
+        {
+            "name": "TypePreprocessor"
+        },
+        {
+            "name": "DateTimePreprocessor"
+        },
+        {
+            "name": "PolynomialFeaturesPreprocessor",
+            "params": {
+                "without_columns": [
+                    "Name",
+                    "SexuponOutcome",
+                    "AnimalType",
+                    "AgeuponOutcome",
+                    "Breed",
+                    "Color",
+                    "DateTime",
+                    "ID"
+                ],
+                "degree": 2,
+                "interaction_only": false
+            }
+        },
+        {
+            "name": "KMeansPreprocessor",
+            "params": {
+                "n_clusters": 4,
+                "without_columns": [
+                    "Name",
+                    "SexuponOutcome",
+                    "AnimalType",
+                    "AgeuponOutcome",
+                    "Breed",
+                    "Color",
+                    "DateTime",
+                    "ID"
+                ]
+            }
+        },
+        {
+            "name": "StandardScalerPreprocessor",
+            "params": {
+                "without_columns": [
+                    "Name",
+                    "SexuponOutcome",
+                    "AnimalType",
+                    "AgeuponOutcome",
+                    "Breed",
+                    "Color",
+                    "DateTime",
+                    "ID"
+                ]
+            }
+        },
+        {
+            "name": "DropPreprocessor",
+            "params": {
+                "drop_columns": [
+                    "Name",
+                    "SexuponOutcome",
+                    "AnimalType",
+                    "AgeuponOutcome",
+                    "Breed",
+                    "Color",
+                    "DateTime"
+                ]
+            }
+        }
+    ]
+}

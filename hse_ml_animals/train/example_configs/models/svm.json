@@ -1,0 +1,6 @@
+{
+    "name": "BasicModel",
+    "base_model_config": {
+        "name": "SVC"
+    }
+}

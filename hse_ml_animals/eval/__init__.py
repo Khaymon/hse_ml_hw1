@@ -1,0 +1,1 @@
+from .eval import strategy_from_config  # noqa

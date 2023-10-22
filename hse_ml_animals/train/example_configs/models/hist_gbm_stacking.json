@@ -1,0 +1,34 @@
+{
+    "name": "BasicModel",
+    "base_model_config": {
+        "name": "StackingClassifier",
+        "params": {
+            "estimators": [
+                {
+                    "name": "gbm_0",
+                    "model": {
+                        "name": "LogisticRegression"
+                    }
+                },
+                {
+                    "name": "gbm_1",
+                    "model": {
+                        "name": "LogisticRegression"
+                    }
+                },
+                {
+                    "name": "gbm_2",
+                    "model": {
+                        "name": "LogisticRegression"
+                    }
+                }
+            ],
+            "final_estimator": {
+                "name": "HistGradientBoostingClassifier",
+                "params": {
+                    "class_weight": "balanced"
+                }
+            }
+        }
+    }
+}

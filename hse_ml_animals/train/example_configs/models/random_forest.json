@@ -1,0 +1,9 @@
+{
+    "name": "BasicModel",
+    "base_model_config": {
+        "name": "RandomForestClassifier",
+        "params": {
+            "class_weight": "balanced"
+        }
+    }
+}

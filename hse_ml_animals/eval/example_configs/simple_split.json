@@ -1,0 +1,12 @@
+{
+    "name": "train_test_split",
+    "params": {
+        "splitter_params": {
+            "test_size": 0.2
+        },
+        "metric": "f1",
+        "metric_param": {
+            "average": "macro"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "KFoldBlending",
+    "base_model_config": {
+        "name": "LogisticRegression"
+    },
+    "params": {
+        "splitter_params": {
+            "n_splits": 5
+        }
+    }
+}

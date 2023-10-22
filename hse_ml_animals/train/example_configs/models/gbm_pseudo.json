@@ -1,0 +1,8 @@
+{
+    "name": "BasicModel",
+    "base_model_config": {
+        "name": "GradientBoostingClassifier"
+    },
+    "test_data": "/home/khaymonenko/hse_ml/data/preprocessed/scaled_datetime_name_min_df_poly/test.csv",
+    "test_pseudo": "/home/khaymonenko/hse_ml/data/preprocessed/scaled_datetime_name_min_df_poly/pseudo/gbm_pseudo.csv"
+}

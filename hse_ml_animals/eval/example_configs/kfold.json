@@ -1,0 +1,12 @@
+{
+    "name": "kfold",
+    "params": {
+        "splitter_params": {
+            "n_splits": 5
+        },
+        "metric": "f1",
+        "metric_param": {
+            "average": "macro"
+        }
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "preprocessors": [
+        {
+            "name": "NamePreprocessor"
+        },
+        {
+            "name": "AgePreprocessor"
+        },
+        {
+            "name": "BreedOneHotPreprocessor",
+            "params": {
+                "max_categories": 5
+            }
+        },
+        {
+            "name": "ColorOneHotPreprocessor",
+            "params": {
+                "max_categories": 5
+            }
+        },
+        {
+            "name": "SexPreprocessor"
+        },
+        {
+            "name": "TypePreprocessor"
+        },
+        {
+            "name": "DateTimePreprocessor"
+        },
+        {
+            "name": "PolynomialFeaturesPreprocessor",
+            "params": {
+                "without_columns": [
+                    "ID",
+                    "NameLength",
+                    "NumColors"
+                ],
+                "degree": 2
+            }
+        },
+        {
+            "name": "StandardScalerPreprocessor",
+            "params": {
+                "without_columns": [
+                    "Name",
+                    "SexuponOutcome",
+                    "AnimalType",
+                    "AgeuponOutcome",
+                    "Breed",
+                    "Color",
+                    "DateTime",
+                    "ID"
+                ]
+            }
+        }
+    ]
+}
