@@ -3,7 +3,7 @@ import pandas as pd
 from pathlib import Path
 import typing as T
 
-import hse_ml_animals.preprocess.lib as preprocess_lib
+import hse_ml_animals.preprocess.preprocessors as preprocess_lib
 import hse_ml_animals.utils as utils
 
 
