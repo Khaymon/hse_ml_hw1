@@ -1,5 +1,5 @@
-from .base_preprocessor import BasePreprocessor
-from .tf_idf_preprocessor import TfIdfPreprocessor
+from ..base.base_preprocessor import BasePreprocessor
+from ..base.tf_idf_preprocessor import TfIdfPreprocessor
 
 
 class TypeTfIdfPreprocessor(TfIdfPreprocessor):

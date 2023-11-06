@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-from .base_preprocessor import BasePreprocessor
+from ..base.base_preprocessor import BasePreprocessor
 
 
 class NamePreprocessor(BasePreprocessor):

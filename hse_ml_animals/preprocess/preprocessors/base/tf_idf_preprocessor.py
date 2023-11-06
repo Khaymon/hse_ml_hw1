@@ -9,8 +9,8 @@ class TfIdfPreprocessor(TextEncoderPreprocessor):
     def __init__(
             self,
             input_col: str,
-            output_col_suffix: str,
+            output_col_prefix: str,
             str_preprocessor: T.Callable[[str], str] = None,
             **params
         ) -> None:
-        super().__init__(input_col, output_col_suffix, TfidfVectorizer, str_preprocessor, **params)
+        super().__init__(input_col, output_col_prefix, TfidfVectorizer, str_preprocessor, **params)

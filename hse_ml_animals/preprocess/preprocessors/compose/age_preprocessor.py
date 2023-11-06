@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 import pandas as pd
 
-from .base_preprocessor import BasePreprocessor
+from ..base.base_preprocessor import BasePreprocessor
 
 
 class AgePreprocessor(BasePreprocessor):

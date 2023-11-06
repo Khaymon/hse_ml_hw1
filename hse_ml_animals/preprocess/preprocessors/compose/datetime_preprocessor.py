@@ -3,7 +3,7 @@ from datetime import datetime
 import typing as T
 import pandas as pd
 
-from .base_preprocessor import BasePreprocessor
+from ..base.base_preprocessor import BasePreprocessor
 
 
 class DateTimePreprocessor(BasePreprocessor):

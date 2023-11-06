@@ -1,7 +1,7 @@
 import typing as T
 
-from .base_preprocessor import BasePreprocessor
-from .vectorizer_preprocessor import VectorizerPreprocessor
+from ..base.base_preprocessor import BasePreprocessor
+from ..base.vectorizer_preprocessor import VectorizerPreprocessor
 
 
 class BreedVectorizerPreprocessor(VectorizerPreprocessor):

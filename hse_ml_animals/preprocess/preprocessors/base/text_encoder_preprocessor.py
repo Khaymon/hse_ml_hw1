@@ -9,13 +9,13 @@ class TextEncoderPreprocessor(BasePreprocessor):
     def __init__(
             self,
             input_col: str,
-            output_col_suffix: str,
+            output_col_prefix: str,
             transformer: BaseEstimator,
             str_preprocessor: T.Callable[[str], str] = None,
             **params
         ):
         self._input_col = input_col
-        self._output_col_suffix = output_col_suffix
+        self._output_col_prefix = output_col_prefix
 
         self._fitted = False
         self._transformer = transformer(**params)
@@ -38,7 +38,7 @@ class TextEncoderPreprocessor(BasePreprocessor):
 
         preprocessed_col = self._transformer.transform(data[self._input_col].apply(self._str_preprocessor)).toarray()
         
-        columns = [self._output_col_suffix + str(idx) for idx in range(len(self._transformer.vocabulary_))]
+        columns = [self._output_col_prefix + str(idx) for idx in range(len(self._transformer.vocabulary_))]
         preprocessed_data = pd.DataFrame(preprocessed_col, columns=columns)
 
         data = pd.concat([data, preprocessed_data], axis=1)
