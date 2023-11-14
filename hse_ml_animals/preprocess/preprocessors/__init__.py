@@ -6,6 +6,7 @@ from .base.sequential_preprocessor import SequentialPreprocessor  # noqa
 from .base.standard_scaler_preprocessor import StandardScalerPreprocessor  # noqa
 from .base.svd_preprocessor import SVDPreprocessor  # noqa
 from .compose.age_preprocessor import AgePreprocessor  # noqa
+from .compose.age_count_vecorizer_preprocessor import AgeVectorizerPreprocessor  # noqa
 from .compose.breed_count_vectorizer_preprocessor import BreedVectorizerPreprocessor  # noqa
 from .compose.breed_one_hot_preprocessor import BreedOneHotPreprocessor  # noqa
 from .compose.breed_tf_idf_preprocessor import BreedTfIdfPreprocessor  # noqa

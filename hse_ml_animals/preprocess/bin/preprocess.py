@@ -29,6 +29,7 @@ def preprocessor_from_config(preprocessor_config: T.Dict) -> preprocess_lib.Sequ
 
     return preprocess_lib.SequentialPreprocessor(preprocessors)
 
+
 def main():
     args = _parse_args()
 

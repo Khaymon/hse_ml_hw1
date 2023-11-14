@@ -8,7 +8,7 @@ import hse_ml_animals.utils as utils
 
 
 class StandardScalerPreprocessor(BasePreprocessor):
-    def __init__(self, columns: T.Optional[str | T.List[str]] = None, without_columns: T.Iterable[str] = ()) -> None:
+    def __init__(self, columns: T.Optional[T.Union[str, T.List[str]]] = None, without_columns: T.Iterable[str] = ()) -> None:
         super().__init__()
 
         self._fitted = False

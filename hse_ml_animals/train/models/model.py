@@ -32,6 +32,8 @@ def base_model_from_config(model_config: T.Dict[str, T.Any]) -> ClassifierMixin:
         return KNeighborsClassifier(**model_config.get("params", {}))
     elif model_config["name"] == "ExtraTreesClassifier":
         return ExtraTreesClassifier(**model_config.get("params", {}))
+    elif model_config["name"] == "MLPClassifier":
+        return MLPClassifier(**model_config.get("params", {}))
     elif model_config["name"] == "StackingClassifier":
         estimators = []
         for estimator in model_config["params"]["estimators"]:

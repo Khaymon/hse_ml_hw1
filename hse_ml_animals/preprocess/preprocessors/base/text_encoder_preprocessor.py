@@ -1,4 +1,5 @@
 from sklearn.base import BaseEstimator
+import numpy as np
 import pandas as pd
 import typing as T
 
@@ -23,25 +24,38 @@ class TextEncoderPreprocessor(BasePreprocessor):
             self._str_preprocessor = str_preprocessor
         else:
             self._str_preprocessor = lambda x: x
+            
+    def _to_array(self, column: pd.Series) -> np.ndarray:
+        return column.to_numpy().reshape((-1, 1))
+    
+    def _to_list(self, column: pd.Series) -> T.List[T.Any]:
+        return column.to_list()
 
     def fit(self, data: pd.DataFrame) -> None:
         assert self._input_col in data
         self._fitted = True
 
-        column_preprocessed = data[self._input_col].apply(self._str_preprocessor).to_list()
-
-        self._transformer.fit(column_preprocessed)
+        try:
+            column_preprocessed = data[self._input_col].apply(self._str_preprocessor).to_list()
+            self._transformer.fit(column_preprocessed)
+        except ValueError:
+            column_preprocessed = data[self._input_col].apply(self._str_preprocessor).to_numpy().reshape((-1, 1))
+            self._transformer.fit(column_preprocessed)
 
     def transform(self, data: pd.DataFrame) -> pd.DataFrame:
         assert self._fitted
         assert self._input_col in data
-
-        preprocessed_col = self._transformer.transform(data[self._input_col].apply(self._str_preprocessor)).toarray()
         
-        columns = [self._output_col_prefix + str(idx) for idx in range(len(self._transformer.vocabulary_))]
-        preprocessed_data = pd.DataFrame(preprocessed_col, columns=columns)
+        
+        preprocessed_column = data[self._input_col].apply(self._str_preprocessor)
+        try:
+            result_data = self._transformer.transform(self._to_list(preprocessed_column)).toarray()
+        except ValueError:
+            result_data = self._transformer.transform(self._to_array(preprocessed_column)).toarray()
+        
+        columns = [self._output_col_prefix + str(idx) for idx in range(result_data.shape[1])]
+        preprocessed_data = pd.DataFrame(result_data, columns=columns)
 
         data = pd.concat([data, preprocessed_data], axis=1)
-        data.drop(self._input_col, axis=1, inplace=True)
 
         return data

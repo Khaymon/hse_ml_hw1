@@ -17,5 +17,4 @@ class NamePreprocessor(BasePreprocessor):
     def transform(self, data: pd.DataFrame) -> pd.DataFrame:
         data[self._output_col] = data[self._input_col].apply(self._name_length)
 
-        data = data.drop(self._input_col, axis=1)
         return data

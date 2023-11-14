@@ -30,6 +30,4 @@ class DateTimePreprocessor(BasePreprocessor):
         data[DateTimePreprocessor.OutputColumns.HOUR] = dates.dt.hour
         data[DateTimePreprocessor.OutputColumns.MINUTE] = dates.dt.minute
 
-        data.drop(self._input_col, axis=1, inplace=True)
-
         return data

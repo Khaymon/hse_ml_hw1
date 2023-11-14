@@ -16,7 +16,7 @@ def metric_from_str(metric_name: str) -> Metric:
 
 
 class BaseEvalStrategy:
-    def __init__(self, target: str, metric: Metric | T.List[Metric], metric_param: T.Dict | T.List[T.Dict], **params):
+    def __init__(self, target: str, metric: T.Union[Metric, T.List[Metric]], metric_param: T.Union[T.Dict, T.List[T.Dict]], **params):
         self._target = target
 
         if not isinstance(metric, list):

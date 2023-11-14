@@ -40,6 +40,5 @@ class AgePreprocessor(BasePreprocessor):
         
         data[self._input_col] = data[self._input_col].fillna("")
         data[self._output_col] = data[self._input_col].apply(self._age_to_days)
-        data.drop(self._input_col, axis=1, inplace=True)
 
         return data
